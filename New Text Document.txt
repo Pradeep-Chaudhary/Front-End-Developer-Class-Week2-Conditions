@@ -1,0 +1,215 @@
+///Week #2 (On Conditions)
+/// Using If statement
+///case 1: Boolean expression is true;
+
+//Example #1
+var firstName = "Pradeep";
+if (firstName == "Pradeep") { // Boolean expresion (in parenthesis) is true
+    console.log("Hello, Pradeep!"); // it executes;
+}
+
+// Example #2
+
+var bankAccountBalance = 550;
+if (bankAccountBalance == 550) {    // Boolean expression is true;
+    console.log("I will pay my rent.")   // it executes;
+}
+
+
+/// case 2: Boolean expression is false;
+
+// Example #3
+
+var firstName = "Pradeep";
+if (firstName == "Pradip") { //Boolean expression if false
+    console.log("Hello, Pradeep! How are you?"); // it does not executes
+}
+
+// Example #4
+
+var bankAccountBalance = 550;
+if (bankAccountBalance == 450) {  //Boolean expression is false;
+    console.log("I will pay my rent."); // it does not execute;
+
+}
+
+/// Use of if and else statements
+
+// Example #5
+
+var dayOfWeek = "Sunday";
+if (dayOfWeek == "Monday") {  // Boolean expression is wrong;
+    console.log("I will go to the park on Sunday."); // this won't execute;
+} else {  // this is default step that will execute;
+    console.log("I will go to the park on " + dayOfWeek + "."); // it executes;
+
+}
+
+
+// Example #6
+
+var oneOfTheBestMovies = "The Pursuit of Happyness"
+if (oneOfTheBestMovies == "The Pursuit of Happiness") {   /// Boolean expression is false (false spelling: Happiness)
+    console.log(oneOfTheBestMovies + " is a very heart touching movie."); // 
+
+} else {
+    console.log(oneOfTheBestMovies + " is a very heart touching movie."); //it executes.
+}
+
+
+/// Use of if and else if statements
+
+// example #7
+
+var downPaymentPercent = 20;
+if (downPaymentPercent < 5 ) {
+    console.log("You have 12 months to pay off your loan."); // this step is skipped as downPaymentPercent = 20;
+}   else if (downPaymentPercent <= 10 ) {                      
+    console.log("You have 18 months to pay off your loan.");   // this step is skipped as downPaymentPercent = 20;
+} else if (downPaymentPercent <= 30 ) {                        
+    console.log("You have 24 months to pay off your loan.");     //this is executed as 20 < 30.
+} else if (downPaymentPercent <= 50 ) {
+    console.log("You have 36 months to pay off your loan.");   // the execution happens at line 68 and stops.
+} else {
+    console.log("Your loan will not be processed.");
+}
+    
+    
+// some change in example 
+
+// example #8
+
+var downPaymentPercent = 2;
+if (downPaymentPercent == 5) {                           
+    console.log("You have 12 months to pay off the loan.");   //This step is skipped as downPaymentPercent (i.e. 2) lies below 3 and 5. Note && indicates "and".
+} else if (downPaymentPercent == 10) {                 
+    console.log("You have 18 months to pay off your loan.");  // This step is skipped as downPaymentPercent (i.e. 2) lies below 3 and 5. Note && indicates "and".
+
+} else if ( downPaymentPercent == 30) {
+    console.log("You have 24 months to pay off your loan.");   // This step is skipped as downPaymentPercent (i.e. 2) lies below 3 and 5. Note && indicates "and".
+
+} else if ( downPaymentPercent == 50) {
+    console.log("You have 36 months to pay off your loan.");
+
+} else {
+    console.log("Your loan will not be processed.")         // this step is executed as 2 does not fit into any of the upper steps.
+}
+
+
+// Example #9
+
+var listOfGroceryIems = "fruits, eggs, vegetables, milk, juice"
+if (listOfGroceryIems == "fruits, eggs, milk") {
+    console.log("We will buy them from Aldi store.")  // this step is skipped.
+
+} else if (listOfGroceryIems == "vegetables") {
+    console.log("We will buy them from Asian Market."); // this step is skipped.
+
+} else if (listOfGroceryIems == "fruits, eggs, juice") {
+    console.log("We will buy them from Supersaver.")  // this step is skipped.
+} else {
+    console.log("We will buy them from Walmart.") // it executes.
+}
+
+
+
+/// Using switch statement
+
+// example #10
+
+var PhysCourseInformation = "Recitation";
+switch (PhysCourseInformation) {
+    case "HomeworkAssingment":
+        console.log("worth 20%")  // since case is homework assignment in this case while our data is recitation. So, it does not execute.
+        break;
+        case "Attendance":
+            console.log("worth 10%");
+            break;
+            case "Recitation":
+                console.log("worth 30%");  // it executes in this step as case is recitation, which is the value of the variable defined in line 117.
+                break;                       // this break function stops as it has been already executed in line 126.
+                case "Exam":
+                    console.log("worth 40%");
+                    break
+}
+
+
+// With changing the value of the variable
+// example #11
+
+var PhysCourseInformation = "Attendance";
+switch (PhysCourseInformation) {
+    case "HomeworkAssignment":
+        console.log("worth 20%");
+        break;
+        case "Attendance":
+            console.log("worth 10%");  // it executes in this step.
+            break;                     // Note that if this break function is not used here, it will display 30 % instead. (Can check by deleting this break function)
+            case "Recitation":
+                console.log("worth 30%");
+                break;
+                case "Exam":
+                    console.log("worth 40%");
+                    break;
+
+}
+
+
+/// Using multiple if statments (multiple conditions)
+
+// Example #12
+
+var x = 10;
+var y = 20;
+if (x == 10) {  // Here we can define if statements one after another.
+    if (y == 20);
+    console.log("The value of x and y are " +  x + " and " + y + " respectively." ); 
+}
+
+
+// Example #13
+
+var dayOfClass = "Tuesday";
+var timeOfClass = "7 PM";
+if (dayOfClass == "Tuesday") {
+    if (timeOfClass == "7 PM")
+    console.log("We have our Front End Developer's class on Tuesday at 7 PM.");
+}
+
+
+/// Flattening (combining of two if statements using "and" or &&)
+
+// Example #14
+
+var y = 4;
+var z = 6;
+if (y == 4 && z == 6) {          // Here we combine two if statements in a single if statement
+    console.log("y is 4 and z is 6");
+    }
+
+
+    // Example #15
+    // flattening example #13
+
+    var dayOfClass = "Tuesday";
+    var timeOfClass = "7 PM";
+    if (dayOfClass == "Tuesday" && timeOfClass == "7 PM") {
+        console.log("We have our Frond End Developer class on Tuesday at 7 PM.");
+    }
+
+
+
+    /// Using else statement in example #15
+
+    // Example #16
+
+    var dayOfClass = "Tuesday";
+    var timeOfClass = "7 PM";
+    if (dayOfWeek == "Tuesday" && timeOfClass == "7 AM") {
+        console.log("We have our Frond End Developer class on Tuesday at 7 PM.");
+
+    } else {
+        console.log("We have our Front End Developer class on " + dayOfClass + " at " +  timeOfClass + " ."); // concantenation (connection of strings with +). At last, period (.) is put inside quote as  a string.
+    }
+
+    ///Reference: https://www.youtube.com/watch?v=ovtcV-QrQEg&t=98s&ab_channel=PromineoTech
